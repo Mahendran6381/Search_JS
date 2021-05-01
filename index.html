@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <title>Filter</title>
+</head>
+<body>
+    <div>
+    <div class="center-align">
+        <h1>
+            My Contacts
+        </h1></div>
+        <div class="namelist">
+            <input type="text" placeholder="search." id='result' >
+            <ul class="collection with-header" id="ul-class">
+
+                <li class="collection-header">A</li>
+
+                <li class="collectin-item"><a href="#">Anand</a></li>
+                <li class="collectin-item"><a href="#">Arun</a></li>
+                <li class="collectin-item"><a href="#">Aaron</a></li>
+
+                <li class="collection-header">B</li>
+                
+                <li class="collectin-item"><a href="#">Bala</a></li>
+                <li class="collectin-item"><a href="#">Bharathi</a></li>
+                <li class="collectin-item"><a href="#">Bake</a></li>
+                
+                <li class="collection-header">N</li>
+
+                <li class="collectin-item"><a href="#">Noah</a></li>
+                <li class="collectin-item"><a href="#">Natha</a></li>
+                <li class="collectin-item"><a href="#">Navam</a></li>
+                
+            </ul>
+        </div>
+
+
+    </div>    
+    <script>
+        var searchItem = document.getElementById('result')
+        var ul = document.getElementById('ul-class')
+        var li =document.querySelectorAll('a')
+        console.log(li)
+        searchItem.addEventListener('keyup',fliterIdem);
+
+
+        function fliterIdem(){
+            var value = document.getElementById('result').value.toUpperCase()
+            console.log(value)
+            for(let i=0;i < li.length;i++){
+                var d = li[0]
+                 if(li[i].innerHTML.toUpperCase().indexOf(value)){
+                    li[i].style.display ='none'
+                 }else{
+                    li[i].style.display =''
+                     
+                 }
+            }
+        }
+
+    </script>
+    
+    
+</body>
+</html>
